@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 
 //Route::get('/', function () {
@@ -64,3 +65,15 @@ Route::group(['middleware' => 'auth'],function (){
 
     Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('send.message');
 
+
+    Route::post('/admin/save', [AdminController::class, 'save'])->name('admin.save');
+    Route::post('/admin/check', [AdminController::class, 'check'])->name('admin.check');
+    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('/admin/profileview', [AdminController::class, 'profile'])->name('admin.profileview');
+    Route::get('/admin/profileedit', [AdminController::class, 'edit'])->name('admin.profileedit');
+    Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+    Route::get('/admin/chats', [AdminController::class, 'chats'])->name('admin.chats');
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::put('/admin/updateProfile', [AdminController::class, 'updateProfile'])->name('admin.updateProfile');

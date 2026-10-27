@@ -130,7 +130,6 @@ class UserController extends Controller
 
     public function profile()
     {
-
         $userId = session('LoggedUserInfo');
         $LoggedUserInfo = User::find($userId);
 

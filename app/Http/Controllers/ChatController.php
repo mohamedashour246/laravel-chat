@@ -98,6 +98,8 @@ class ChatController extends Controller
             'message' => $message,
         ]);
 
+      //  event(new MessageSent($message));
+
         return response()->json([
             'success' => true,
             'message' => 'Message send successfully'
